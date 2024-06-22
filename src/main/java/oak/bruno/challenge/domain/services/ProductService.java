@@ -5,7 +5,10 @@ import oak.bruno.challenge.domain.entities.Product;
 import oak.bruno.challenge.domain.repositories.ProductRepository;
 import oak.bruno.challenge.dtos.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ProductService {
@@ -31,5 +34,15 @@ public class ProductService {
         }
 
         return possibleProd.get();
+    }
+
+    public List<Product> findAll(String direction) {
+        Sort sort = Sort.by("priceInCents");
+        if (direction.equalsIgnoreCase("DESC")) {
+            sort = sort.descending();
+        } else {
+            sort = sort.ascending();
+        }
+        return repository.findAll(sort);
     }
 }

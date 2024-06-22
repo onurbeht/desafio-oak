@@ -13,8 +13,3 @@ public class ChallengeApplication {
 }
 
 
-//todo - Formulário com os campos abaixo:
-//todo - Nome do produto - campo de texto
-//todo - Descrição do produto - campo de texto
-//todo  - Valor do produto - campo de valor
-//todo - Disponível para venda - campo com 2 opções: sim / não

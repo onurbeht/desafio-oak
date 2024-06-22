@@ -15,13 +15,14 @@ public class Product {
     private String id;
     private String name;
     private String info;
-    private Integer price_in_cents;
+    @Column(name = "price_in_cents")
+    private Integer priceInCents;
     private Boolean available;
 
     public Product (String name, String info, Integer price_in_cents, Boolean available) {
         this.name = name;
         this.info = info;
-        this.price_in_cents = price_in_cents;
+        this.priceInCents = price_in_cents;
         this.available = available;
     }
 
